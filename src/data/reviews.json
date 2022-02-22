@@ -1,0 +1,28 @@
+[
+  {
+    "name": "John Doe",
+    "content": "iquam vel nibh amet, vitae at purus dui semper vel facilisis enim",
+    "avatar": "/assets/avatar-1.jpeg",
+    "active": true
+  },
+  {
+    "name": "Christian Jones",
+    "content": "iquam vel nibh amet, vitae at purus dui semper vel facilisis enim",
+    "avatar": "/assets/avatar-2.jpeg"
+  },
+  {
+    "name": "Clarence Robinson",
+    "content": "iquam vel nibh amet, vitae at purus dui semper vel facilisis enim vel facilisis enim",
+    "avatar": "/assets/avatar-3.jpeg"
+  },
+  {
+    "name": "Kathleen Alday",
+    "content": "iquam amet, vitae at purus dui semper vel facilisis enim",
+    "avatar": "/assets/avatar-4.jpeg"
+  },
+  {
+    "name": "Tina Givens",
+    "content": "iquam vel nibh amet, vitae at purus enim enim dui semper vel facilisis enim",
+    "avatar": "/assets/avatar-5.jpeg"
+  }
+]
