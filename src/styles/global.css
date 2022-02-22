@@ -425,6 +425,7 @@ header {
   border-radius: 50%;
   padding: 0.3rem;
   height: var(--size-fluid-1);
+  aspect-ratio: 1/1;
   cursor: pointer;
 }
 

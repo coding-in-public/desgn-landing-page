@@ -40,8 +40,8 @@ import data from '../data/reviews.json';
     </div>
     <div class="indicator-container">
       {
-        data.map((review) => (
-          <button class="indicator ${review?.active && 'active'}"></button>
+        data.map((review, index) => (
+          <button class="indicator ${review?.active && 'active'}" aria-label="Jump to Review ${index + 1}"></button>
         ))
       }
     </div>
