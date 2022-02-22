@@ -24,11 +24,6 @@ const navLinks = [
 ];
 
 ---
-<style>
-nav {
-  background-color: gray;
-}
-</style>
 <nav>
   <div class="container nav-container">
   <Icon name="logo" width={225} class="logo"/>
@@ -50,7 +45,6 @@ nav {
 
 <script>
   const navBtn = document.querySelector('#menu-btn');
-  const navLinks = document.querySelectorAll('.nav-links');
   navBtn.addEventListener('click', () => {
     navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
   })

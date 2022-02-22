@@ -9,19 +9,21 @@ const {title} = Astro.props;
 	<meta name="viewport" content="width=device-width">
 	<title>{title}</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<style global>
-		@import "../styles/global.css";
-		@import "../styles/home.css";
-	</style>
+	<link
+    rel="stylesheet"
+    href={Astro.resolve("../styles/global.css")}
+  >
 </head>
 <body>
-  <Navbar />
-	<main>
-    <slot />
-	</main>
-  <footer class="blur">
-    <small>Copyright © <span id="copyrightYear"></span> Desgn</small>
-  </footer>
+  <div class="wrapper">
+    <Navbar />
+	  <main>
+        <slot />
+	  </main>
+    <footer class="blur">
+      <small>Copyright © <span id="copyrightYear"></span> Desgn</small>
+    </footer>
+  </div>
   <script>
     document.querySelector('#copyrightYear').textContent = new Date().getFullYear();
   </script>

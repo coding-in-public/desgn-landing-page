@@ -1,28 +1,363 @@
-* {
-	box-sizing: border-box;
-	margin: 0;
+@import url("https://fonts.googleapis.com/css?family=Inter:400,600");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
 }
 
 :root {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-	font-size: 1rem;
-	--user-font-scale: 1rem - 16px;
-	font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
+  /* Colors */
+  --bkg: 222 47.4% 11.2%;
+  --bkg-alt: 226 58.3% 18.8%;
+  --text: 226 100% 93.9%;
+  --text-alt: 226 22.1% 73.3%;
+  --muted: 230 39% 67.8%;
+  --white: 255 100% 100%;
+  --accent1: 241 76.8% 62.7%;
+  --accent2: 330 85.2% 60.4%;
+  --accent3: 0 90.6% 70.8%;
+  --gradient: linear-gradient(
+    94.55deg,
+    hsl(var(--accent2)) -4.6%,
+    hsl(var(--accent3)) 99.9%
+  );
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 130%;
+  }
 }
 
 body {
-	padding: 4rem 2rem;
-	width: 100%;
-	min-height: 100vh;
-	display: grid;
-	justify-content: center;
-	background: #f9fafb;
-	color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 2000px;
+  margin: auto;
+  background-color: hsl(var(--bkg));
+  color: hsl(var(--text));
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #111827;
-		color: #fff;
-	}
+/* LAYOUT */
+.wrapper {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
+
+main {
+  display: grid;
+  gap: var(--size-fluid-6);
+  padding: var(--size-fluid-5) var(--size-fluid-2);
+}
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.container-sm {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container-xs {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* UTILS */
+
+.text-bkg {
+  color: hsl(var(--bkg));
+}
+.text-bkg-alt {
+  color: hsl(var(--bkg-alt));
+}
+.text-text {
+  color: hsl(var(--text));
+}
+.text-text-alt {
+  color: hsl(var(--text-alt));
+}
+.text-muted {
+  color: hsl(var(--muted));
+}
+.text-white {
+  color: hsl(var(--white));
+}
+.text-accent1 {
+  color: hsl(var(--accent1));
+}
+.text-accent2 {
+  color: hsl(var(--accent2));
+}
+.text-accent3 {
+  color: hsl(var(--accent3));
+}
+.text-gradient {
+  color: transparent;
+  background: var(--gradient);
+  background-clip: text;
+}
+
+.h1 {
+  font-size: var(--font-size-fluid-3);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.h2 {
+  font-size: var(--font-size-fluid-2);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.h3 {
+  font-size: var(--font-size-fluid-1);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+small {
+  font-size: var(--font-size-00);
+}
+
+.grid-sm {
+  display: grid;
+  place-items: center;
+  gap: var(--size-fluid-1);
+}
+
+.grid-md {
+  display: grid;
+  place-items: center;
+  gap: var(--size-fluid-3);
+}
+
+.grid-lg {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--size-fluid-3);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.narrow {
+  max-width: 80ch;
+}
+
+/* COMPONENTS */
+.btn {
+  color: hsl(var(--white));
+  text-decoration: none;
+  padding: var(--size-2) var(--size-fluid-4);
+  border-radius: var(--radius-1);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: hsl(var(--accent1));
+}
+
+.btn--secondary {
+  background: var(--gradient);
+}
+
+.btn--muted {
+  background-color: hsl(var(--muted));
+}
+
+.btn--menu {
+  background-color: transparent;
+  border: none;
+  display: grid;
+  place-items: center;
+  padding-inline: var(--size-2);
+}
+
+.btn--menu[aria-expanded="true"] + .nav-links {
+  transform: translateY(0);
+}
+
+.blur {
+  position: relative;
+}
+
+.blur::after,
+.blur::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: blur(35px);
+  border-radius: 50% 50% 50%;
+}
+
+.blur::after {
+  background-color: hsl(var(--accent1) / .2);
+  transform: rotate(-20deg);
+}
+
+.blur::before {
+  background-color: hsl(var(--accent2) / .2);
+  transform: rotate(20deg);
+}
+
+@media screen (min-width: 768px) {
+  .blur::after,
+  .blur::before {
+    filter: blur(120px);
+  }
+}
+
+/* NAV */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--size-fluid-2);
+}
+
+.nav-links,
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+}
+
+.nav-links {
+  flex-direction: column;
+  transform: translateY(-200%);
+  position: absolute;
+  background-color: hsl(var(--bkg));
+  top: var(--size-fluid-5);
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: var(--size-3);
+  border-bottom: 2px solid hsl(var(--muted));
+}
+
+li[role="none"],
+.nav-link {
+  width: 100%;
+  display: block;
+  font-size: var(--font-size-1);
+}
+
+.logo {
+  width: calc(var(--size-fluid-8) * 0.75);
+}
+
+@media (min-width: 900px) {
+  .nav-wrapper {
+    gap: var(--size-4);
+  }
+  .btn--menu {
+    display: none;
+  }
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    transform: translateY(0);
+    border: none;
+    padding: 0;
+    inset: initial;
+    background-color: transparent;
+  }
+  li[role="none"],
+  .nav-link {
+    width: initial;
+    font-size: var(--font-size-0);
+  }
+}
+
+/* HERO */
+header {
+  text-align: center;
+}
+
+
+/* PROGRAMMER SECTION */
+.programmer::after,
+.programmer::before {
+  opacity: 0.8;
+}
+
+.programmer-icon {
+  width: var(--size-fluid-9);
+  filter: drop-shadow(10px 10px 25px hsl(var(--accent2) / 0.2));
+}
+
+/* SERVICES */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: var(--size-fluid-3);
+}
+
+.service {
+  flex: 1 1 300px;
+  display: grid;
+  gap: var(--size-2);
+}
+
+/* FOOTER */
+
+footer {
+  display: grid;
+  place-items: center;
+  padding: var(--size-2);
+  background-color: hsl(var(--bkg));
+  color: hsl(var(--text-alt));
+}
+
+footer::after,
+footer::before {
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
