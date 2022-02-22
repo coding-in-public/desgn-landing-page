@@ -1,0 +1,40 @@
+---
+import {Icon} from 'astro-icon';
+const data = [
+    {
+      "icon" :"simple-icons:amd",
+      "alt" :"AMD Logo",
+    },
+    {
+      "icon" :"simple-icons:500px",
+      "alt" :"500 Logo",
+    },
+    {
+      "icon" :"simple-icons:abbvie",
+      "alt" :"Abbvie Logo",
+    },
+    {
+      "icon" :"simple-icons:bbc",
+      "alt" :"BBC Logo",
+    },
+    {
+      "icon" :"simple-icons:astonmartin",
+      "alt" :"Aston Martin Logo",
+    },
+    {
+      "icon" :"simple-icons:asda",
+      "alt" :"Asada Logo",
+    },
+  ]
+---
+
+<section class="clients grid-sm">
+  <h2 class="h3 clients--heading">Happy Clients</h2>
+  <div class="client-logo-container">
+    {
+      data.map(i => (
+        <Icon name={i.icon} width="120" height="85" class="client-logo text-muted" alt={i.alt} />
+      ))
+    }
+  </div>
+</section>
