@@ -1,43 +1,27 @@
-# Welcome to [Astro](https://astro.build)
+# Desgn Landing Page (Figma-to-Code)
+During this video series, we’re going to do a full design-to-code landing page.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
+We’ll start by hand-designing everything in Figma and then code out the page using a new static site generator called Astro. To style the site, we’ll write modern CSS and tack on a few superpowers using Open Props, a brand new framework made entirely from css variables. And for a bit of extra fun, we’ll hook our styling up with Post CSS and Open Props’ just-in-time engine to keep our compiled stylesheet lightweight and speedy, only including props we use and our manually-typed CSS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🔗  Key Links 🔗
+- Live code: https://codinginpublic.dev/projects/desgn-landing-page/
+- YouTube Playlist: 
 
-## 🚀 Project Structure
+---------------------------------------
 
-Inside of your Astro project, you'll see the following folders and files:
+🔗  Additional Links 🔗
+- [Figma](https://figma.com)
+- [NodeJS](https://nodejs.org/en/)
+- [Astro Docs](https://docs.astro.build/en/getting-started/)
+- [Astro Icon](https://www.npmjs.com/package/astro-icon)
+- [PostCSS Docs](https://github.com/postcss/postcss#usage)
+- [PostCSS autoprefixer Plugin](https://github.com/postcss/autoprefixer)
+- [Open Props](https://open-props.style/)
+- [PostCSS Plugin for JIT Open Props](https://github.com/GoogleChromeLabs/postcss-jit-props)
 
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---------------------------------------
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+🌐 Connect With Me 🌐 
+- Website: https://www.codinginpublic.dev
+- Blog: https://www.chrispennington.blog
+- Twitter: https://twitter.com/cpenned
