@@ -5,7 +5,6 @@ We’ll start by hand-designing everything in Figma and then code out the page u
 
 🔗  Key Links 🔗
 - Live code: https://codinginpublic.dev/projects/desgn-landing-page/
-- YouTube Playlist: 
 
 ---------------------------------------
 
