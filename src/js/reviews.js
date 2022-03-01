@@ -34,8 +34,10 @@ function handleReviewBtnClick(e){
 
 function handleIndicatorClick(e){
   if(isMoving){ return };
-  isMoving = true;
-  currentIndex = indicators.indexOf(e.target) + 1;
+  const clickedIndicator = indicators.indexOf(e.target) + 1;
+  if(clickedIndicator === currentIndex){ return };
+  isMoving = 'true';
+  currentIndex = clickedIndicator;
   moveSlider();
 }
 
