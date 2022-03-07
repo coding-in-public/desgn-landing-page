@@ -34,7 +34,7 @@ const navLinks = [
     <ul class="nav-links" role="navigation">
       {navLinks.map(link => (
         <li role="none">
-          <a href={link.url} class="btn btn--${link.style} nav-link">{link.name}</a>
+          <a href={link.url} class={`btn btn--${link.style} nav-link`}>{link.name}</a>
         </li>
       ))
       }
