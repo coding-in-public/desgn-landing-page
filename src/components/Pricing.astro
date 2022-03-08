@@ -12,7 +12,7 @@ import data from '../data/pricing.js';
   <div class="pricing-container container-sm blur">
     {
       data.map(card => (
-        <div class="pricing-card ${card?.featured && 'featured'} grid-sm">
+        <div class={`pricing-card ${card?.featured && 'featured'} grid-sm`}>
           <div>
             <p class="pricing-card-price">{card.price}</p>
             <h3 class="pricing-card-pill">{card.plan}</h3>

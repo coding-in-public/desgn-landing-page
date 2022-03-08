@@ -41,7 +41,7 @@ import data from '../data/reviews.json';
     <div class="indicator-container">
       {
         data.map((review, index) => (
-          <button class="indicator ${review?.active && 'active'}" aria-label="Jump to Review ${index + 1}"></button>
+          <button class={`indicator ${review?.active && 'active'}`} aria-label={`Jump to Review ${index + 1}`}></button>
         ))
       }
     </div>
